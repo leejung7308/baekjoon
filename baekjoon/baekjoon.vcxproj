@@ -151,6 +151,7 @@
     <ClCompile Include="1181.cpp" />
     <ClCompile Include="1259.cpp" />
     <ClCompile Include="1436.cpp" />
+    <ClCompile Include="1654.cpp" />
     <ClCompile Include="2475.cpp" />
     <ClCompile Include="2920.cpp" />
   </ItemGroup>
