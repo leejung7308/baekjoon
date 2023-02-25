@@ -135,6 +135,7 @@
     </ClCompile>
     <ClCompile Include="1005.cpp" />
     <ClCompile Include="1007.cpp" />
+    <ClCompile Include="1009.cpp" />
     <ClCompile Include="1010.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
