@@ -159,6 +159,7 @@
     <ClCompile Include="1074%28미완%29.cpp" />
     <ClCompile Include="1075.cpp" />
     <ClCompile Include="10773.cpp" />
+    <ClCompile Include="10807.cpp" />
     <ClCompile Include="10814.cpp" />
     <ClCompile Include="10816.cpp" />
     <ClCompile Include="10828.cpp" />
