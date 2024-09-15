@@ -176,6 +176,7 @@
     <ClCompile Include="1270.cpp" />
     <ClCompile Include="1271%28미완%29.cpp" />
     <ClCompile Include="1436.cpp" />
+    <ClCompile Include="1535.cpp" />
     <ClCompile Include="15829.cpp" />
     <ClCompile Include="1654.cpp" />
     <ClCompile Include="16922.cpp" />
