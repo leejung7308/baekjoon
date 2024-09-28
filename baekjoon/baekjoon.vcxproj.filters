@@ -282,5 +282,8 @@
     <ClCompile Include="11403.cpp">
       <Filter>소스 파일\Backjoon</Filter>
     </ClCompile>
+    <ClCompile Include="1679.cpp">
+      <Filter>소스 파일\Backjoon</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
