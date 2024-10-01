@@ -2,6 +2,7 @@
 //using namespace std;
 //vector<vector<int>> v;
 //vector<vector<int>> vst;
+//queue<pair<int, int>> q;
 //multiset<int> ans;
 //int cnt = 0, n;
 //void travel(int x, int y) {
@@ -10,10 +11,10 @@
 //	if (v[x][y] == 1) {
 //		vst[x][y] = 1;
 //		cnt++;
-//		travel(x + 1, y);
-//		travel(x, y + 1);
-//		travel(x - 1, y);
-//		travel(x, y - 1);
+//		q.push(make_pair(x + 1, y));
+//		q.push(make_pair(x - 1, y));
+//		q.push(make_pair(x, y + 1));
+//		q.push(make_pair(x, y - 1));
 //	}
 //	return;
 //}
@@ -32,7 +33,12 @@
 //		for (int j = 0; j < n; j++) {
 //			if (v[i][j] == 1 && vst[i][j] != 1) {
 //				cnt = 0;
-//				travel(i, j);
+//				q.push(make_pair(i, j));
+//				while (!q.empty()) {
+//					pair<int, int> temp = q.front();
+//					q.pop();
+//					travel(temp.first, temp.second);
+//				}
 //				ans.insert(cnt);
 //			}
 //		}
