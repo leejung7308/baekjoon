@@ -180,6 +180,7 @@
     <ClCompile Include="1271%28미완%29.cpp" />
     <ClCompile Include="1283.cpp" />
     <ClCompile Include="1309.cpp" />
+    <ClCompile Include="1351.cpp" />
     <ClCompile Include="1436.cpp" />
     <ClCompile Include="1446.cpp" />
     <ClCompile Include="1495.cpp" />
