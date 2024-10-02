@@ -169,6 +169,7 @@
     <ClCompile Include="10866.cpp" />
     <ClCompile Include="10989.cpp" />
     <ClCompile Include="11048.cpp" />
+    <ClCompile Include="1105.cpp" />
     <ClCompile Include="11050.cpp" />
     <ClCompile Include="11051.cpp" />
     <ClCompile Include="11403.cpp" />
@@ -230,6 +231,9 @@
     <ClCompile Include="9095.cpp" />
     <ClCompile Include="9657.cpp" />
     <ClCompile Include="Hanoi.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="base.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
