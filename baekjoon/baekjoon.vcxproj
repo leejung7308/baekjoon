@@ -174,6 +174,7 @@
     <ClCompile Include="11051.cpp" />
     <ClCompile Include="1124.cpp" />
     <ClCompile Include="11403.cpp" />
+    <ClCompile Include="1149.cpp" />
     <ClCompile Include="11650.cpp" />
     <ClCompile Include="11651.cpp" />
     <ClCompile Include="1181.cpp" />
