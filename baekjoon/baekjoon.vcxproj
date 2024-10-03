@@ -172,6 +172,7 @@
     <ClCompile Include="1105.cpp" />
     <ClCompile Include="11050.cpp" />
     <ClCompile Include="11051.cpp" />
+    <ClCompile Include="1124.cpp" />
     <ClCompile Include="11403.cpp" />
     <ClCompile Include="11650.cpp" />
     <ClCompile Include="11651.cpp" />
@@ -182,6 +183,7 @@
     <ClCompile Include="1271%28미완%29.cpp" />
     <ClCompile Include="1283.cpp" />
     <ClCompile Include="1309.cpp" />
+    <ClCompile Include="13305.cpp" />
     <ClCompile Include="1351.cpp" />
     <ClCompile Include="1354.cpp" />
     <ClCompile Include="1436.cpp" />
