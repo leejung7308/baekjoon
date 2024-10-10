@@ -4,20 +4,29 @@
 //	ios::sync_with_stdio(0);
 //	cin.tie(0);
 //	cout.tie(0);
-//	int n, k;
-//	cin >> n >> k;
-//	vector<int> v(n);
-//	vector<int> dp(k + 1, 999999);
-//	dp[0] = 0;
+//	long long n, m = 2000000001;
+//	cin >> n;
+//	vector<long long> v;
+//	pair<long long, long long> ans;
 //	for (int i = 0; i < n; i++) {
-//		cin >> v[i];
+//		int tmp;
+//		cin >> tmp;
+//		v.push_back(tmp);
 //	}
-//	for (int i = 1; i <= k; i++) {
-//		for (int j = 0; j < n; j++) {
-//			if(v[j]<=i)
-//				dp[i] = min(dp[i - v[j]] + 1, dp[i]);
+//	sort(v.begin(), v.end());
+//	int s = 0, e = v.size()-1;
+//	while (s != e) {
+//		if (abs(v[s] + v[e]) < m) {
+//			m = abs(v[s] + v[e]);
+//			ans = make_pair(v[s], v[e]);
 //		}
+//		if (v[s] + v[e] < 0) s++;
+//		else if (v[s] + v[e] == 0) {
+//			ans = make_pair(v[s], v[e]);
+//			break;
+//		}
+//		else e--;
 //	}
-//	if (dp[k] == 999999) cout << -1 << endl;
-//	else cout << dp[k] << endl;
+//
+//	cout << ans.first << " " << ans.second << endl;
 //}
