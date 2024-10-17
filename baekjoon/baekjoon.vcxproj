@@ -246,6 +246,7 @@
     <ClCompile Include="2579.cpp" />
     <ClCompile Include="9095.cpp" />
     <ClCompile Include="9657.cpp" />
+    <ClCompile Include="9663.cpp" />
     <ClCompile Include="Hanoi.cpp" />
   </ItemGroup>
   <ItemGroup>
