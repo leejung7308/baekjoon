@@ -372,6 +372,12 @@
     <ClCompile Include="14500.cpp">
       <Filter>소스 파일\Backjoon</Filter>
     </ClCompile>
+    <ClCompile Include="EmoticonSales.cpp">
+      <Filter>소스 파일\Programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="1987.cpp">
+      <Filter>소스 파일\Backjoon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="base.txt" />

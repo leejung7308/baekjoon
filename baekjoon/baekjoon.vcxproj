@@ -220,6 +220,7 @@
     <ClCompile Include="1932.cpp" />
     <ClCompile Include="1965.cpp" />
     <ClCompile Include="1966.cpp" />
+    <ClCompile Include="1987.cpp" />
     <ClCompile Include="2108.cpp" />
     <ClCompile Include="2156.cpp" />
     <ClCompile Include="2164.cpp" />
@@ -250,6 +251,7 @@
     <ClCompile Include="9095.cpp" />
     <ClCompile Include="9657.cpp" />
     <ClCompile Include="9663.cpp" />
+    <ClCompile Include="EmoticonSales.cpp" />
     <ClCompile Include="Hanoi.cpp" />
   </ItemGroup>
   <ItemGroup>
