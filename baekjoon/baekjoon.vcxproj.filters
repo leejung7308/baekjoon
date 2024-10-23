@@ -405,6 +405,15 @@
     <ClCompile Include="연속된부분수열의합.cpp">
       <Filter>소스 파일\Programmers</Filter>
     </ClCompile>
+    <ClCompile Include="과제진행하기.cpp">
+      <Filter>소스 파일\Programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="광물캐기.cpp">
+      <Filter>소스 파일\Programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="3190.cpp">
+      <Filter>소스 파일\Backjoon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="base.txt" />

@@ -235,6 +235,7 @@
     <ClCompile Include="2470.cpp" />
     <ClCompile Include="2667.cpp" />
     <ClCompile Include="1676.cpp" />
+    <ClCompile Include="3190.cpp" />
     <ClCompile Include="7569.cpp" />
     <ClCompile Include="7576.cpp" />
     <ClCompile Include="9251.cpp" />
@@ -258,6 +259,8 @@
     <ClCompile Include="9663.cpp" />
     <ClCompile Include="EmoticonSales.cpp" />
     <ClCompile Include="Hanoi.cpp" />
+    <ClCompile Include="과제진행하기.cpp" />
+    <ClCompile Include="광물캐기.cpp" />
     <ClCompile Include="두원사이정수쌍.cpp" />
     <ClCompile Include="석유시추.cpp" />
     <ClCompile Include="연속된부분수열의합.cpp" />
