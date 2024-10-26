@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\Programmers">
       <UniqueIdentifier>{a26d4073-bbe0-4789-80a8-55f5b82f09e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\CodingTest">
+      <UniqueIdentifier>{43461656-aa4a-4c26-ad21-ead6854b1c49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1004.cpp">
@@ -437,6 +440,9 @@
     </ClCompile>
     <ClCompile Include="1806.cpp">
       <Filter>소스 파일\Backjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="FizzBuzz.cpp">
+      <Filter>소스 파일\CodingTest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
