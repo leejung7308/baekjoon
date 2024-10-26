@@ -264,16 +264,17 @@
     <ClCompile Include="9095.cpp" />
     <ClCompile Include="9657.cpp" />
     <ClCompile Include="9663.cpp" />
-    <ClCompile Include="ANumber.cpp" />
     <ClCompile Include="EmoticonSales.cpp" />
     <ClCompile Include="FizzBuzz.cpp" />
     <ClCompile Include="Hanoi.cpp" />
     <ClCompile Include="과제진행하기.cpp" />
     <ClCompile Include="광물캐기.cpp" />
+    <ClCompile Include="도넛과막대그래프.cpp" />
     <ClCompile Include="두원사이정수쌍.cpp" />
     <ClCompile Include="리코첼로봇.cpp" />
     <ClCompile Include="석유시추.cpp" />
     <ClCompile Include="연속된부분수열의합.cpp" />
+    <ClCompile Include="택배배달과수거하기.cpp" />
     <ClCompile Include="퍼즐게임챌린지.cpp" />
   </ItemGroup>
   <ItemGroup>
