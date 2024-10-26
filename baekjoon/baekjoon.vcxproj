@@ -264,6 +264,7 @@
     <ClCompile Include="9095.cpp" />
     <ClCompile Include="9657.cpp" />
     <ClCompile Include="9663.cpp" />
+    <ClCompile Include="ANumber.cpp" />
     <ClCompile Include="EmoticonSales.cpp" />
     <ClCompile Include="FizzBuzz.cpp" />
     <ClCompile Include="Hanoi.cpp" />
