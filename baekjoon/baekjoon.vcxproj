@@ -208,6 +208,7 @@
     <ClCompile Include="1577.cpp" />
     <ClCompile Include="15829.cpp" />
     <ClCompile Include="1584.cpp" />
+    <ClCompile Include="1620.cpp" />
     <ClCompile Include="16236.cpp" />
     <ClCompile Include="1654.cpp" />
     <ClCompile Include="1660.cpp" />
@@ -276,6 +277,7 @@
     <ClCompile Include="F.cpp" />
     <ClCompile Include="FizzBuzz.cpp" />
     <ClCompile Include="Hanoi.cpp" />
+    <ClCompile Include="[1차]캐시.cpp" />
     <ClCompile Include="과제진행하기.cpp" />
     <ClCompile Include="광물캐기.cpp" />
     <ClCompile Include="도넛과막대그래프.cpp" />
