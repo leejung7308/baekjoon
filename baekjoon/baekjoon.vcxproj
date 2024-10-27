@@ -271,7 +271,9 @@
     <ClCompile Include="B.cpp" />
     <ClCompile Include="C.cpp" />
     <ClCompile Include="D.cpp" />
+    <ClCompile Include="E.cpp" />
     <ClCompile Include="EmoticonSales.cpp" />
+    <ClCompile Include="F.cpp" />
     <ClCompile Include="FizzBuzz.cpp" />
     <ClCompile Include="Hanoi.cpp" />
     <ClCompile Include="과제진행하기.cpp" />

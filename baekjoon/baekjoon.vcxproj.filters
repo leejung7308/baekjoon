@@ -471,6 +471,12 @@
     <ClCompile Include="D.cpp">
       <Filter>소스 파일\CodingTest</Filter>
     </ClCompile>
+    <ClCompile Include="E.cpp">
+      <Filter>소스 파일\CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="F.cpp">
+      <Filter>소스 파일\CodingTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="base.txt" />
