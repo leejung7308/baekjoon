@@ -492,6 +492,9 @@
     <ClCompile Include="7662.cpp">
       <Filter>소스 파일\Backjoon</Filter>
     </ClCompile>
+    <ClCompile Include="9019.cpp">
+      <Filter>소스 파일\Backjoon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="base.txt" />
