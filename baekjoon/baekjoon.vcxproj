@@ -233,6 +233,7 @@
     <ClCompile Include="1912.cpp" />
     <ClCompile Include="1916.cpp" />
     <ClCompile Include="1920.cpp" />
+    <ClCompile Include="1931.cpp" />
     <ClCompile Include="1932.cpp" />
     <ClCompile Include="1965.cpp" />
     <ClCompile Include="1966.cpp" />
