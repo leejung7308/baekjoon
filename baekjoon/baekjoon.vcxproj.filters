@@ -630,8 +630,11 @@
     <ClCompile Include="2448.cpp">
       <Filter>소스 파일\Backjoon</Filter>
     </ClCompile>
-    <ClCompile Include="9935.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
+    <ClCompile Include="충돌위험찾기.cpp">
+      <Filter>소스 파일\Programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="미로탈출.cpp">
+      <Filter>소스 파일\Programmers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

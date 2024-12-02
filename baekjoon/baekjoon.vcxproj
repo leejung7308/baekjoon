@@ -317,7 +317,6 @@
     <ClCompile Include="9095.cpp" />
     <ClCompile Include="9657.cpp" />
     <ClCompile Include="9663.cpp" />
-    <ClCompile Include="9935.cpp" />
     <ClCompile Include="A.cpp" />
     <ClCompile Include="B.cpp" />
     <ClCompile Include="C.cpp" />
@@ -333,8 +332,10 @@
     <ClCompile Include="도넛과막대그래프.cpp" />
     <ClCompile Include="두원사이정수쌍.cpp" />
     <ClCompile Include="리코첼로봇.cpp" />
+    <ClCompile Include="미로탈출.cpp" />
     <ClCompile Include="석유시추.cpp" />
     <ClCompile Include="연속된부분수열의합.cpp" />
+    <ClCompile Include="충돌위험찾기.cpp" />
     <ClCompile Include="택배배달과수거하기.cpp" />
     <ClCompile Include="퍼즐게임챌린지.cpp" />
   </ItemGroup>
