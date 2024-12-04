@@ -327,6 +327,7 @@
     <ClCompile Include="F.cpp" />
     <ClCompile Include="FizzBuzz.cpp" />
     <ClCompile Include="Hanoi.cpp" />
+    <ClCompile Include="JadenCase문자열만들기.cpp" />
     <ClCompile Include="[1차]캐시.cpp" />
     <ClCompile Include="과제진행하기.cpp" />
     <ClCompile Include="광물캐기.cpp" />
@@ -344,7 +345,9 @@
     <ClCompile Include="숫자카드나누기.cpp" />
     <ClCompile Include="시소짝꿍.cpp" />
     <ClCompile Include="연속된부분수열의합.cpp" />
+    <ClCompile Include="올바른괄호.cpp" />
     <ClCompile Include="점찍기.cpp" />
+    <ClCompile Include="최댓값과최솟값.cpp" />
     <ClCompile Include="충돌위험찾기.cpp" />
     <ClCompile Include="택배배달과수거하기.cpp" />
     <ClCompile Include="테이블해시함수.cpp" />
