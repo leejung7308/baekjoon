@@ -264,6 +264,7 @@
     <ClCompile Include="18110.cpp" />
     <ClCompile Include="18111(brute_force).cpp" />
     <ClCompile Include="18111.cpp" />
+    <ClCompile Include="1865.cpp" />
     <ClCompile Include="1874.cpp" />
     <ClCompile Include="18870.cpp" />
     <ClCompile Include="1890.cpp" />
