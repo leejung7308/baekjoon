@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\CodingTest">
       <UniqueIdentifier>{43461656-aa4a-4c26-ad21-ead6854b1c49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\BojeongStudy">
+      <UniqueIdentifier>{4843a46b-86d5-43cf-b4b8-a4fdf0354515}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1004.cpp">
@@ -711,32 +714,8 @@
     <ClCompile Include="2744.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="17144.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
-    </ClCompile>
-    <ClCompile Include="2638.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
-    </ClCompile>
-    <ClCompile Include="4999.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
-    </ClCompile>
-    <ClCompile Include="1865.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
-    </ClCompile>
-    <ClCompile Include="30805.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
-    </ClCompile>
-    <ClCompile Include="1197.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
-    </ClCompile>
-    <ClCompile Include="2166.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
-    </ClCompile>
-    <ClCompile Include="5522.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
-    </ClCompile>
-    <ClCompile Include="7891.cpp">
-      <Filter>소스 파일\Backjoon</Filter>
+    <ClCompile Include="10164.cpp">
+      <Filter>소스 파일\BojeongStudy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
