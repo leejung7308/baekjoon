@@ -747,6 +747,9 @@
     <ClCompile Include="9466.cpp">
       <Filter>소스 파일\BojeongStudy</Filter>
     </ClCompile>
+    <ClCompile Include="1946.cpp">
+      <Filter>소스 파일\Backjoon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="base.txt" />
