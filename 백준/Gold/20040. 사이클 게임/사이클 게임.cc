@@ -5,8 +5,12 @@
 using namespace std;
 vector<int> parent;
 int find(int a) {
-	if (a == parent[a]) return a;
-	return parent[a] = find(parent[a]);
+	while (a != parent[a]) {
+		int p = parent[a];
+		parent[a] = parent[p];
+		a = p;
+	}
+	return a;
 }
 void uni(int a, int b) {
 	a = find(a);
