@@ -1,46 +1,40 @@
-#include <iostream>
-#include <algorithm>
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#include<unordered_map>
+#define INF 1000000000
+#define FAST_IO ios::sync_with_stdio; cin.tie(0); cout.tie(0)
+#define DIR vector<pair<int,int>> dir = {{0,1},{1,0},{0,-1},{-1,0}}
 using namespace std;
- 
 int main() {
-    int N, M;
-    vector<int> crane;
-    vector<int> box;
-    cin >> N;
-    for (int i = 0; i < N; i++) {
-        int n;
-        cin >> n;
-        crane.push_back(n);
-    }
-    cin >> M;
-    for (int i = 0; i < M; i++) {
-        int m;
-        cin >> m;
-        box.push_back(m);
-    }
-    sort(crane.begin(), crane.end());
-    sort(box.begin(), box.end());
-    int cnt = 0;
-    // 불가능한 경우
-    if (crane.back() < box.back()) {
-        cout << -1;
-        return 0;
-    }
-    while (!box.empty()) {
-        cnt++;
-        // 크레인 가장 큰 무게 부터
-        for (int i = crane.size() - 1; i >= 0; i--) {
-            // 상자 가장 큰 무게 부터
-            for (int j = box.size() - 1; j >= 0; j--) {
-                // 옮길 수 있으면 삭제하고 다음 크레인으로
-                if (crane[i] >= box[j]) {
-                    box.erase(box.begin() + j);
-                    break;
-                }
-            }
-        }
-    }
-    cout << cnt;
-    return 0;
+	FAST_IO;
+	int n, m, cur = 0, st = 0, max_cnt = 0, cur_cnt = 0;
+	cin >> n;
+	vector<int> v(n);
+	for (int i = 0; i < n; i++) cin >> v[i];
+	cin >> m;
+	vector<int> w(m);
+	for (int i = 0; i < m; i++) cin >> w[i];
+	sort(v.rbegin(), v.rend());
+	sort(w.rbegin(), w.rend());
+	if (w[0] > v[0]) {
+		cout << -1;
+		return 0;
+	}
+	for (int i = 0; i < m; i++) {
+		if (cur + 1 < v.size() && w[i] <= v[cur + 1]) {
+			cur++;
+			st += max_cnt - cur_cnt;
+			cur_cnt = 0;
+		}
+		if (cur_cnt == max_cnt) {
+			if (st != 0) st--;
+			else {
+				st = cur;
+				cur_cnt++;
+				max_cnt++;
+			}
+		}
+		else cur_cnt++;
+		//cout << "limit: " << v[cur] << " weight: " << w[i] << " max_cnt: " << max_cnt << " cur_cnt: " << cur_cnt << " stack: " << st << '\n';
+	}
+	cout << max_cnt;
 }
