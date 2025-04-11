@@ -14,11 +14,8 @@ void uni(int a, int b) {
 	b = findp(b);
 	a < b ? parent[b] = a : parent[a] = b;
 }
-struct pos {
-	int x;
-	int y;
-	int z;
-};
+struct pos {int x, y, z;};
+struct weight { int w, a, b;};
 bool compx(const pair<int, pos>& a, const pair<int, pos>& b) {
 	return a.second.x < b.second.x;
 }
@@ -28,49 +25,32 @@ bool compy(const pair<int, pos>& a, const pair<int, pos>& b) {
 bool compz(const pair<int, pos>& a, const pair<int, pos>& b) {
 	return a.second.z < b.second.z;
 }
+bool comp(const weight& a, const weight& b) {
+	return a.w < b.w;
+}
 int main() {
 	FAST_IO;
 	int n;
 	cin >> n;
 	for (int i = 0; i < n; i++) parent.push_back(i);
 	vector<pair<int,pos>> v(n);
-	vector<unordered_map<int,int>> graph(n);
+	vector<weight> w;
 	for (int i = 0; i < n; i++) cin >> v[i].second.x >> v[i].second.y >> v[i].second.z, v[i].first = i;
 	sort(v.begin(), v.end(), compx);
-	for (int i = 0; i < n - 1; i++) {
-		int a, b;
-		if (v[i].first < v[i + 1].first) a = v[i].first, b = v[i + 1].first;
-		else a = v[i + 1].first, b = v[i].first;
-		if (graph[a].find(b) != graph[a].end()) graph[a][b] = min(graph[a][b], abs(v[i].second.x - v[i + 1].second.x));
-		else graph[a][b] = abs(v[i].second.x - v[i + 1].second.x);
-	}
+	for (int i = 0; i < n - 1; i++) w.push_back({ abs(v[i].second.x - v[i + 1].second.x),v[i].first,v[i + 1].first });
 	sort(v.begin(), v.end(), compy);
-	for (int i = 0; i < n - 1; i++) {
-		int a, b;
-		if (v[i].first < v[i + 1].first) a = v[i].first, b = v[i + 1].first;
-		else a = v[i + 1].first, b = v[i].first;
-		if (graph[a].find(b) != graph[a].end()) graph[a][b] = min(graph[a][b], abs(v[i].second.y - v[i + 1].second.y));
-		else graph[a][b] = abs(v[i].second.y - v[i + 1].second.y);
-	}
+	for (int i = 0; i < n - 1; i++) w.push_back({ abs(v[i].second.y - v[i + 1].second.y),v[i].first,v[i + 1].first });
 	sort(v.begin(), v.end(), compz);
-	for (int i = 0; i < n - 1; i++) {
-		int a, b;
-		if (v[i].first < v[i + 1].first) a = v[i].first, b = v[i + 1].first;
-		else a = v[i + 1].first, b = v[i].first;
-		if (graph[a].find(b) != graph[a].end()) graph[a][b] = min(graph[a][b], abs(v[i].second.z - v[i + 1].second.z));
-		else graph[a][b] = abs(v[i].second.z - v[i + 1].second.z);
-	}
-	priority_queue<pair<int, pair<int, int>>>pq;
-	for (int i = 0; i < n; i++) {
-		if (graph[i].size() == 0) continue;
-		for (const auto& p : graph[i]) pq.push({ -p.second,{i,p.first} });
-	}
+	for (int i = 0; i < n - 1; i++) w.push_back({ abs(v[i].second.z - v[i + 1].second.z),v[i].first,v[i + 1].first });
+	sort(w.begin(), w.end(), comp);
 	long long ans = 0;
-	while (!pq.empty()) {
-		int cost = -pq.top().first;
-		int a = pq.top().second.first, b = pq.top().second.second;
-		pq.pop();
-		if (findp(a) != findp(b)) ans+=cost, uni(a, b);
+	for (int i = 0; i < w.size(); i++) {
+		int cost = w[i].w;
+		int a = w[i].a, b = w[i].b;
+		if (findp(a) != findp(b)) {
+			ans += cost;
+			uni(a, b);
+		}
 	}
 	cout << ans;
 }
