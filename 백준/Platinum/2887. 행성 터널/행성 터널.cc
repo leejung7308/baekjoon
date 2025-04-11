@@ -14,11 +14,6 @@ void uni(int a, int b) {
 	b = findp(b);
 	a < b ? parent[b] = a : parent[a] = b;
 }
-struct pair_hash {
-	std::size_t operator()(const std::pair<int, int>& p) const {
-		return std::hash<int>()(p.first) ^ (std::hash<int>()(p.second) << 1);
-	}
-};
 struct pos {
 	int x;
 	int y;
@@ -39,34 +34,37 @@ int main() {
 	cin >> n;
 	for (int i = 0; i < n; i++) parent.push_back(i);
 	vector<pair<int,pos>> v(n);
-	unordered_map<pair<int, int>, int, pair_hash> graph;
+	vector<unordered_map<int,int>> graph(n);
 	for (int i = 0; i < n; i++) cin >> v[i].second.x >> v[i].second.y >> v[i].second.z, v[i].first = i;
 	sort(v.begin(), v.end(), compx);
 	for (int i = 0; i < n - 1; i++) {
 		int a, b;
 		if (v[i].first < v[i + 1].first) a = v[i].first, b = v[i + 1].first;
 		else a = v[i + 1].first, b = v[i].first;
-		if (graph.find(make_pair(a,b)) != graph.end()) graph[{a, b}] = min(graph[{a, b}], abs(v[i].second.x - v[i + 1].second.x));
-		else graph[{a, b}] = abs(v[i].second.x - v[i + 1].second.x);
+		if (graph[a].find(b) != graph[a].end()) graph[a][b] = min(graph[a][b], abs(v[i].second.x - v[i + 1].second.x));
+		else graph[a][b] = abs(v[i].second.x - v[i + 1].second.x);
 	}
 	sort(v.begin(), v.end(), compy);
 	for (int i = 0; i < n - 1; i++) {
 		int a, b;
 		if (v[i].first < v[i + 1].first) a = v[i].first, b = v[i + 1].first;
 		else a = v[i + 1].first, b = v[i].first;
-		if (graph.find(make_pair(a, b)) != graph.end()) graph[{a, b}] = min(graph[{a, b}], abs(v[i].second.y - v[i + 1].second.y));
-		else graph[{a, b}] = abs(v[i].second.y - v[i + 1].second.y);
+		if (graph[a].find(b) != graph[a].end()) graph[a][b] = min(graph[a][b], abs(v[i].second.y - v[i + 1].second.y));
+		else graph[a][b] = abs(v[i].second.y - v[i + 1].second.y);
 	}
 	sort(v.begin(), v.end(), compz);
 	for (int i = 0; i < n - 1; i++) {
 		int a, b;
 		if (v[i].first < v[i + 1].first) a = v[i].first, b = v[i + 1].first;
 		else a = v[i + 1].first, b = v[i].first;
-		if (graph.find(make_pair(a, b)) != graph.end()) graph[{a, b}] = min(graph[{a, b}], abs(v[i].second.z - v[i + 1].second.z));
-		else graph[{a, b}] = abs(v[i].second.z - v[i + 1].second.z);
+		if (graph[a].find(b) != graph[a].end()) graph[a][b] = min(graph[a][b], abs(v[i].second.z - v[i + 1].second.z));
+		else graph[a][b] = abs(v[i].second.z - v[i + 1].second.z);
 	}
 	priority_queue<pair<int, pair<int, int>>>pq;
-	for (const auto& p : graph) pq.push({ -p.second,p.first });
+	for (int i = 0; i < n; i++) {
+		if (graph[i].size() == 0) continue;
+		for (const auto& p : graph[i]) pq.push({ -p.second,{i,p.first} });
+	}
 	long long ans = 0;
 	while (!pq.empty()) {
 		int cost = -pq.top().first;
