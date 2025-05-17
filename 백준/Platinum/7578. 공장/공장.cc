@@ -5,20 +5,20 @@
 #define FAST_IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0)
 #define DIR const vector<pair<int,int>> dir = {{0,1},{1,0},{0,-1},{-1,0}}
 using namespace std;
-vector<int> seg(2000000);
-long long sum(int s, int e, int n, int l, int r) {
-	if (e < l || r < s) return 0;
-	if (l <= s && e <= r) return seg[n];
-	int mid = (s + e) / 2;
-	return sum(s, mid, n * 2, l, r) + sum(mid + 1, e, n * 2 + 1, l, r);
+vector<int> fenwick(500001);
+long long sum(int idx) {
+	long long ret = 0;
+	while (idx) {
+		ret += fenwick[idx];
+		idx -= idx & -idx;
+	}
+	return ret;
 }
-void update(int s, int e, int n, int idx) {
-	if (idx < s || e < idx) return;
-	seg[n]++;
-	if (s == e) return;
-	int mid = (s + e) / 2;
-	update(s, mid, n * 2, idx);
-	update(mid + 1, e, n * 2 + 1, idx);
+void update(int n, int idx) {
+	while (idx <= n) {
+		fenwick[idx]++;
+		idx += idx & -idx;
+	}
 }
 int main() {
 	FAST_IO;
@@ -26,8 +26,8 @@ int main() {
 	long long ans = 0;
 	cin >> n;
 	unordered_map<int, int> m;
-	vector<pair<int,int>> v(n);
-	for (int i = 0; i < n; i++) {
+	vector<int> v(n);
+	for (int i = 1; i <= n; i++) {
 		int tmp;
 		cin >> tmp;
 		m[tmp] = i;
@@ -35,12 +35,11 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		int tmp;
 		cin >> tmp;
-		v[i] = { m[tmp],i };
+		v[i] = m[tmp];
 	}
-	sort(v.begin(), v.end());
-	for (int i = 0; i < n; i++) {
-		ans += sum(0, n - 1, 1, v[i].second, n - 1);
-		update(0, n - 1, 1, v[i].second);
+	for (int i = n - 1; i >= 0; i--) {
+		ans += sum(v[i]);
+		update(n, v[i]);
 	}
 	cout << ans;
 }
