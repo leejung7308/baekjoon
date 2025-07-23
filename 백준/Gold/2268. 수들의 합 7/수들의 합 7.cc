@@ -11,38 +11,38 @@
 #define pii pair<int, int>
 using namespace std;
 const pii operator+(const pii& a, const pii& b) { return { a.first + b.first, a.second + b.second }; }
-vector<long long> v, seg;
+vector<long long> fenwick, v;
 int n, m;
-void update(int start,int end, int n, int idx, int diff) {
-    if (idx < start || end < idx) return;
-    seg[n] += diff;
-    if (start == end) return;
-    int mid = (start + end) / 2;
-    update(start, mid, n * 2, idx, diff);
-    update(mid + 1, end, n * 2 + 1, idx, diff);
+void update(int idx, long long diff) {
+    while (idx <= n) {
+        fenwick[idx] += diff;
+        idx += idx & -idx;
+    }
 }
-long long sum(int start,int end, int n, int left, int right) {
-    if (end < left || right < start) return 0;
-    if (left <= start && end <= right) return seg[n];
-    int mid = (start + end) / 2;
-    return sum(start, mid, n * 2, left, right) + sum(mid + 1, end, n * 2 + 1, left, right);
+long long sum(int idx) {
+    long long ret = 0;
+    while (idx > 0) {
+        ret += fenwick[idx];
+        idx -= idx & -idx;
+    }
+    return ret;
 }
 int main() {
     FAST_IO;
     cin >> n >> m;
+    fenwick.resize(n + 1);
     v.resize(n + 1);
-    seg.resize(n * 4);
     while (m--) {
         int op, a, b;
         cin >> op >> a >> b;
         if (op == 0) {
-            if (a > b) swap(a, b);
-            cout << sum(1, n, 1, a, b) << '\n';
+            if(a > b) swap(a, b);
+            cout << sum(b) - sum(a - 1) << '\n';
         }
         else {
             long long diff = b - v[a];
-            update(1, n, 1, a, diff);
             v[a] = b;
+            update(a, diff);
         }
     }
 }
