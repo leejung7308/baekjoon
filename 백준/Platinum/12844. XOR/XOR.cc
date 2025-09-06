@@ -13,19 +13,16 @@ using namespace std;
 int seg[2000000], lazy[2000000];
 int n, m;
 void lazyupdate(int start, int end, int n) {
+    if (lazy[n] == 0) return;
     if ((end - start + 1) % 2 == 1)seg[n] ^= lazy[n];
-    lazy[n * 2] ^= lazy[n];
-    lazy[n * 2 + 1] ^= lazy[n];
+    if (start != end) {
+        lazy[n * 2] ^= lazy[n];
+        lazy[n * 2 + 1] ^= lazy[n];
+    }
     lazy[n] = 0;
 }
 void update(int start, int end, int n, int left, int  right, int diff) {
-    if (lazy[n] != 0) {
-        if (start == end) {
-            seg[n] ^= lazy[n];
-            lazy[n] = 0;
-        }
-        else lazyupdate(start, end, n);
-    }
+    lazyupdate(start, end, n);
     if (end < left || right < start) return;
     if (left <= start && end <= right) {
         if ((end - start + 1) % 2 == 1) seg[n] ^= diff;
@@ -39,15 +36,9 @@ void update(int start, int end, int n, int left, int  right, int diff) {
 }
 int query(int start, int end, int n, int left, int right) {
     if (end < left || right < start) return 0;
-    int mid = (start + end) / 2;
-    if (lazy[n] != 0) {
-        if (start == end) {
-            seg[n] ^= lazy[n];
-            lazy[n] = 0;
-        }
-        else lazyupdate(start, end, n);
-    }
+    lazyupdate(start, end, n);
     if (left <= start && end <= right) return seg[n];
+    int mid = (start + end) / 2;
     return query(start, mid, n * 2, left, right) ^ query(mid + 1, end, n * 2 + 1, left, right);
 }
 int main() {
