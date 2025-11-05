@@ -24,7 +24,6 @@ void makeThing() {
 }
 void Input() {
     cin >> n >> m;
-    things.resize(n);
     for (int i = 0; i < n; i++) {
         cin >> v >> c >> k;
         makeThing();
